@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>app</title>
+    <script src="producto.js"></script>
+    <script src="arbol.js"></script>
+</head>
+<body>
+    <header>Arboles</header>
+        <div id="app"></div>
+        <section id="productos">
+            <form>
+                <label for="txtcod">
+                    codigo: <input type="text" id="txtcod">
+                </label> <br></br>
+                <label for="txtnom">
+                    nombre: <input type="text" id="txtnom">
+                </label> <br></br>
+                <label for="txtpre">
+                    precio: <input type="number" id="txtpre">
+                </label> <br></br>
+                <label for="txtcan">
+                    cantidad: <input type="number" id="txtcan">
+                </label> <br></br>
+                <button type="button" id="btnadd">Agregar</button>
+                <button type="button" id="btnfind">Buscar</button>
+                <button type="button" id="btnclear">borrar</button>
+                <button type="button" id="btnInorder">InOrder</button>
+                <button type="button" id="btnpostOrder">PostOrder</button>
+                <button type="button" id="btnpreOrder">PreOrder</button>
+                <button type="reset" id="btncan">Cancelar</button>
+            </form>
+        </section>
+        <div id="detalles">
+
+        </div>
+
+        <script src="app.js"></script>
+</body>
+</html>

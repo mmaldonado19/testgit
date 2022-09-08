@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+ class producto{
+    constructor (nombre, codigo, precio, cantidad){
+    this.nombre=nombre;
+    this.codigo=codigo;
+    this.precio=precio;
+    this.cantidad=cantidad;
+    this.hijoIzquierdo=null;
+    this.hijoDerecho=null;
+    }
+}
+class BinaryTree{
+    constructor(){
+        this.raiz=null;
+    }
+agregar (nuevo){
+    if (this.raiz==null)
+      this.raiz=nuevo;
+    else   
+        this._agregate(nuevo,this.raiz);  
+}
+_agregate(nuevo,nodox){
+    if (nuevo.codigo<nodox.codigo)
+        if(nodox.hijoIzquierdo==null)
+            nodox.hijoIzquierdo=nuevo;
+        else
+        this._agregate(nuevo, nodox.hijoIzquierdo);
+    else
+    if(nodox.hijoDerecho==null)
+        nodox.hijoDerecho=nuevo;
+        else
+            this._agregate(nuevo, nodox.hijoDerecho);
+    }
+    inOrder(){
+        if(this.raiz==null)
+            return "";
+        else 
+        return this._inOrderRec(this.raiz);
+    }
+    _inOrderRec(nodox){
+        let info="";
+        if(nodox.hijoIzquierdo!=null)
+            info += this._inOrderRec(nodox.hijoIzquierdo);
+            info += nodox.codigo + " - ";
+        if (nodox.hijoDerecho!=null)
+            info += this._inOrderRec(nodox.hijoDerecho);
+        return info;
+    }
+    preOrder(){
+    if(this.raiz==null)
+        return "";
+    else
+    return this._preOrderRec(this.raiz)
+    }
+    _preOrderRec(nodox){
+        let info="";
+        info += nodox.codigo + " - ";
+        if(nodox.hijoIzquierdo!=null)
+            info +=this._preOrderRec(nodox.hijoIzquierdo)
+        if(nodox.hijoDerecho!=null)
+            info += this._preOrderRec(nodox.hijoDerecho)
+            return info;
+        
+    }
+    postOrder(){
+        if(this.raiz==null)
+        return "";
+    else
+    return this._preOrderRec(this.raiz)
+    }
+    _postOrder(nodox){
+        let info="";
+        if(nodox.hijoIzquierdo!=null)
+            info +=this._preOrderRec(nodox.hijoIzquierdo)
+        if(nodox.hijoDerecho!=null)
+            info += this._preOrderRec(nodox.hijoDerecho)
+        info += nodox.codigo + " - ";
+            return info;
+    }
+}
+</script>
+</html>
+
+
